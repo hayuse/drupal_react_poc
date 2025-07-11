@@ -1,0 +1,44 @@
+services:
+  drupal-app:
+    build:
+      context: .
+      dockerfile: docker_compose/web/Dockerfile
+    platform: linux/amd64
+    ports:
+      - ":80" # localhostの8080ポートをApacheの80ポートにマッピング
+    container_name: drupal-app
+    environment:
+      DB_HOST: db  # dbサービス名をホストとして指定
+      DB_PORT: 3306  # コンテナ内部のポート
+      DB_NAME: mydatabase
+      DB_USER: user
+      DB_PASSWORD: password
+    depends_on:
+      - drupal-db
+    networks:
+      - app-network
+    volumes:
+      - ./drupal-react-poc:/var/www/html
+
+  drupal-db:
+    build:
+      context: .
+      dockerfile: docker_compose/db/Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - ":3306" # MySQLのポートをマッピング
+    networks:
+      - app-network
+    container_name: drupal-db
+volumes:
+  db_data:
+
+networks:
+  app-network:
+    driver: bridge

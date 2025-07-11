@@ -1,0 +1,5 @@
+core/
+vendor/
+node_modules/
+.docker/
+.env
