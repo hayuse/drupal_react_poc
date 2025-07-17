@@ -1,0 +1,5 @@
+client_id: 815693814536-0sft5g98a7k5fi0vnrkuiqq6bk0hfnfs.apps.googleusercontent.com
+client_secret: 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
+scopes: 'https://www.googleapis.com/auth/calendar.readonly'
+endpoints: ''
+restricted_domain: ''

@@ -1,0 +1,11 @@
+uuid: 045a2123-c3a5-40bc-8ec2-2327026830c9
+langcode: ja
+status: true
+dependencies: {  }
+name: blog
+type: blog
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

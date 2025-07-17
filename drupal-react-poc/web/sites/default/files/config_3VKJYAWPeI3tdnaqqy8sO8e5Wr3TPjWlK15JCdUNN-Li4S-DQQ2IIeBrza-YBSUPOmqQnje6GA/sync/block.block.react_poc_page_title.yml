@@ -1,0 +1,20 @@
+uuid: eeed907c-065e-4240-b83e-a9d11edf25c5
+langcode: ja
+status: true
+dependencies:
+  theme:
+    - react_poc
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: react_poc_page_title
+theme: react_poc
+region: sidebar_first
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: ページのタイトル
+  label_display: '0'
+  provider: core
+visibility: {  }

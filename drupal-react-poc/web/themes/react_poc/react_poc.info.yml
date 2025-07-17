@@ -1,0 +1,24 @@
+name: react_poc
+type: theme
+'base theme': stable9
+version: 1.0.0
+libraries:
+  - react_poc/base
+  - react_poc/messages
+  - core/normalize
+libraries-extend:
+  user/drupal.user:
+    - react_poc/user
+  core/drupal.dropbutton:
+    - react_poc/dropbutton
+  core/drupal.dialog:
+    - react_poc/dialog
+  file/drupal.file:
+    - react_poc/file
+  core/drupal.progress:
+    - react_poc/progress
+  core/drupal.tablesort:
+    - react_poc/drupal.tablesort
+description: ''
+core_version_requirement: ^11
+generator: 'starterkit_theme:11.2.2'

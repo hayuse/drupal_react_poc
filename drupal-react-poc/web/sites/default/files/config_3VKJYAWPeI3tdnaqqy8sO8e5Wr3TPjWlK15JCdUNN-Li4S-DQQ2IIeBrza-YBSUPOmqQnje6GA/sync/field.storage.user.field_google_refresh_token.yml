@@ -1,0 +1,19 @@
+uuid: 6cf8f26b-10aa-4cdc-939f-d4eaa2e980e4
+langcode: ja
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_google_refresh_token
+field_name: field_google_refresh_token
+entity_type: user
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

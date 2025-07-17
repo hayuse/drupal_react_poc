@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: HlN7eAN2N4JIHsYv56V4E7sqC9bS609KwvGFjyD_mgk
+langcode: ja
+uuid: 60a34ecf-39d3-4dfc-8aac-9b427b5eaa5c
+name: POC
+mail: h.karita@mochiya.ad.jp
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: ja
+mail_notification: null

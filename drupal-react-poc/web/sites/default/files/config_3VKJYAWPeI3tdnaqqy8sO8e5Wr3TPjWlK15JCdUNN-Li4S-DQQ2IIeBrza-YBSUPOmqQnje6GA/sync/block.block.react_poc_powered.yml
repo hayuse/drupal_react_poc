@@ -1,0 +1,22 @@
+uuid: ca6f7b52-3237-48c7-bc97-5f045f00fb6e
+langcode: ja
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - react_poc
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: react_poc_powered
+theme: react_poc
+region: sidebar_first
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

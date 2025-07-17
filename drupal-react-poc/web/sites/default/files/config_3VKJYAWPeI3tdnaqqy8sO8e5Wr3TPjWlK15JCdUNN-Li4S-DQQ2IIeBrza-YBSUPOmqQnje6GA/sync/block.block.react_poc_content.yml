@@ -1,0 +1,22 @@
+uuid: b0a22fd1-1a9d-422c-86ff-fd4f8f9b3163
+langcode: ja
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - react_poc
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: react_poc_content
+theme: react_poc
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: メインページコンテンツ
+  label_display: '0'
+  provider: system
+visibility: {  }

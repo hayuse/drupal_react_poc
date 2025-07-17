@@ -1,0 +1,13 @@
+uuid: d0874616-6667-498d-ba54-e346675990dd
+langcode: ja
+status: false
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: r_A0T3aTqGDwLyvoH7wLps-0PM--RHlS8UsiJe_Ac64
+id: node.search_index
+label: 検索インデックス
+description: ''
+targetEntityType: node
+cache: true

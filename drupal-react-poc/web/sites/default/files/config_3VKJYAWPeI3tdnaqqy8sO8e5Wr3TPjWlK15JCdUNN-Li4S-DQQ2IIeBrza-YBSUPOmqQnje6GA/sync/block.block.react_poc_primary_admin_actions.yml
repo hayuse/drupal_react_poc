@@ -1,0 +1,20 @@
+uuid: 29c79cd0-d53f-403e-8638-504c7483e875
+langcode: ja
+status: true
+dependencies:
+  theme:
+    - react_poc
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: react_poc_primary_admin_actions
+theme: react_poc
+region: highlighted
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: プライマリ管理アクション
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 592f7ef5-be44-492d-bdb3-6777d010e1cf
+langcode: ja
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - react_poc
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: react_poc_breadcrumbs
+theme: react_poc
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: パンくず
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,39 @@
+_core:
+  default_config_hash: 4GIX5Esnc_umpXUBj4IIocRX7Mt5fPhm4AgXfE3E56E
+module:
+  block: 0
+  contextual: 0
+  dblog: 0
+  dynamic_page_cache: 0
+  field: 0
+  field_ui: 0
+  file: 0
+  filter: 0
+  jsonapi: 0
+  language: 0
+  layout_builder: 0
+  layout_discovery: 0
+  locale: 0
+  mysql: 0
+  navigation: 0
+  node: 0
+  page_cache: 0
+  path_alias: 0
+  reactive_calendar: 0
+  serialization: 0
+  social_api: 0
+  social_auth: 0
+  social_auth_google: 0
+  system: 0
+  text: 0
+  user: 0
+  views_ui: 0
+  views: 10
+  minimal: 1000
+theme:
+  stark: 0
+  claro: 0
+  olivero: 0
+  stable9: 0
+  react_poc: 0
+profile: minimal

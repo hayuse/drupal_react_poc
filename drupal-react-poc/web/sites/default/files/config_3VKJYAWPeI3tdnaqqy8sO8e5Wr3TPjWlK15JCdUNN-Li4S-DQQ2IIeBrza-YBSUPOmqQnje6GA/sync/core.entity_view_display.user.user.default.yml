@@ -1,0 +1,27 @@
+uuid: 0195ed98-5a95-44ea-ad1c-cacf41d906ee
+langcode: ja
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_google_refresh_token
+  module:
+    - user
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_google_refresh_token:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  member_for:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  langcode: true
