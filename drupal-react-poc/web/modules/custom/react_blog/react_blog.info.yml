@@ -1,0 +1,5 @@
+name: React Blog
+type: module
+description: 'Displays a list of blog articles using React.'
+core_version_requirement: ^10 || ^11
+package: Custom

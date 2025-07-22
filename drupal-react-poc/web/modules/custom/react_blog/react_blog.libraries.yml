@@ -1,0 +1,18 @@
+react_blog:
+  version: 1.x
+  js:
+    js/dist/main.js: {}
+  css:
+    theme:
+      js/dist/style.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
+
+react_blog.local:
+  version: 1.x
+  js:
+    js/local.js: { attributes: { type: module } }
+    http://localhost:5173/@vite/client: { attributes: { type: module } }
+    http://localhost:5173/src/index.tsx: { attributes: { type: module } }

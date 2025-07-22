@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for the React Blog module.
+ */
+
+use Drupal\Core\Site\Settings;
+
+/**
+ * Implements hook_theme().
+ */
+function react_blog_theme($existing, $type, $theme, $path) {
+  return [
+    'react_blog_template' => [
+      'variables' => [],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function react_blog_page_attachments_alter(array &$attachments) {
+  $host = \Drupal::request()->getHost();
+  $is_local = (
+    Settings::get('environment') === 'local' ||
+    $host === 'localhost'
+  );
+
+  if ($is_local) {
+    // viteの開発サーバーが立っているかの確認
+    $vite_server_internal = 'http://host.docker.internal:5173';
+    $vite_server_external = 'http://localhost:5173';
+    $dev_mode = FALSE;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $vite_server_internal . '/@vite/client');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($ch, CURLOPT_NOBODY, TRUE);
+    curl_setopt($ch, CURLOPT_TIMEOUT_MS, 100);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Host: ' . parse_url($vite_server_external, PHP_URL_HOST) . ':' . parse_url($vite_server_external, PHP_URL_PORT)]);
+    curl_exec($ch);
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+    // Vite開発サーバーが立っていたら開発モードON
+    if ($http_code === 200) {
+      $dev_mode = TRUE;
+    }
+    // 開発モードONの時にHMRの有効
+    if ($dev_mode) {
+      $attachments['#attached']['library'][] = 'react_blog/react_blog.local';
+    }
+  }
+}
+
