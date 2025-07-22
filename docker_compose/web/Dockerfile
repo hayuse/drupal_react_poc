@@ -1,6 +1,6 @@
 FROM php:8.3-apache
 
-COPY ./drupal-react-poc/ /var/www/html/
+COPY ./ /var/www/html/
 COPY ./docker_compose/web/conf/ /etc/apache2/
 
 WORKDIR /var/www/html

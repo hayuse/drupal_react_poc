@@ -3,4 +3,5 @@ vendor/
 node_modules/
 .docker/
 .env
+drupal-react-poc/web/sites/default/files
 client_secret_815693814536-0sft5g98a7k5fi0vnrkuiqq6bk0hfnfs.apps.googleusercontent.com.json

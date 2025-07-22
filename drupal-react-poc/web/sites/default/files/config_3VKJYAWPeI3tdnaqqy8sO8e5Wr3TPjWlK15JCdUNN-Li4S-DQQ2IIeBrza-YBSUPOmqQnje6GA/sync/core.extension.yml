@@ -9,6 +9,7 @@ module:
   field_ui: 0
   file: 0
   filter: 0
+  image: 0
   jsonapi: 0
   language: 0
   layout_builder: 0
@@ -19,11 +20,8 @@ module:
   node: 0
   page_cache: 0
   path_alias: 0
-  reactive_calendar: 0
+  react_blog: 0
   serialization: 0
-  social_api: 0
-  social_auth: 0
-  social_auth_google: 0
   system: 0
   text: 0
   user: 0
