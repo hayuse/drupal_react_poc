@@ -9,7 +9,7 @@ react_blog:
     - core/drupal
     - core/jquery
     - core/once
-
+## 開発用スクリプト(HMR)
 react_blog.local:
   version: 1.x
   js:

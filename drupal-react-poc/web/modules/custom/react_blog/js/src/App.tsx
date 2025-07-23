@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div>
-      <h1>Blog artissscles</h1>
+      <h1>React blog list</h1>
       <HashRouter>
         <Routes>
           <Route path='/' element={<List />} />

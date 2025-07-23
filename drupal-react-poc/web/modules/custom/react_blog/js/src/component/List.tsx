@@ -4,6 +4,7 @@ import Card from "@mui/joy/Card";
 import Box from "@mui/joy/Box";
 import CardCover from "@mui/joy/CardCover";
 import CardContent from "@mui/joy/CardContent";
+import Skeleton from "@mui/joy/Skeleton";
 import Typography from "@mui/joy/Typography";
 
 interface Article {
@@ -61,37 +62,43 @@ const List = () => {
     return file ? file.attributes.uri.url : null;
   };
 
-  if (loading) return <div>Loading</div>;
-
   return (
     <Box
       component="ul"
       sx={{ display: "flex", gap: 2, flexWrap: "wrap", p: 0, m: 0 }}
     >
-      {articles.map((article) => (
-        <Link to={`/details/${article.id}`}>
-          <Card component="li" sx={{ minWidth: 300, flexGrow: 1 }}>
-            <CardCover>
-              {getImageUrl(article.relationships.field_visual) && (
-                <img
-                  src={getImageUrl(article.relationships.field_visual) ?? ""}
-                  loading="lazy"
-                  alt=""
-                />
-              )}
-            </CardCover>
-            <CardContent>
-              <Typography
-                level="body-lg"
-                textColor="#fff"
-                sx={{ fontWeight: "lg", mt: { xs: 12, sm: 18 } }}
-              >
-                {article.attributes.title}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Link>
-      ))}
+      {loading
+        ? Array.from(new Array(2)).map((_, index) => (
+            <Skeleton variant="rectangular" height={203} width={300}>
+              <Card component="li" sx={{ minWidth: 300, flexGrow: 1 }}></Card>
+            </Skeleton>
+          ))
+        : articles.map((article) => (
+            <Link to={`/details/${article.id}`}>
+              <Card component="li" sx={{ minWidth: 300, flexGrow: 1 }}>
+                <CardCover>
+                  {getImageUrl(article.relationships.field_visual) && (
+                    <img
+                      src={
+                        getImageUrl(article.relationships.field_visual) ?? ""
+                      }
+                      loading="lazy"
+                      alt=""
+                    />
+                  )}
+                </CardCover>
+                <CardContent>
+                  <Typography
+                    level="body-lg"
+                    textColor="#fff"
+                    sx={{ fontWeight: "lg", mt: { xs: 12, sm: 18 } }}
+                  >
+                    {article.attributes.title}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
     </Box>
   );
 };
