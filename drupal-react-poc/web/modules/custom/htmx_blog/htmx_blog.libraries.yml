@@ -1,0 +1,20 @@
+htmx:
+  version: 2.0.6
+  js:
+    js/htmx.min.js: {}
+
+styling:
+  css:
+    theme:
+      css/style.css: {}
+
+sortable:
+  js:
+    js/Sortable.min.js: {}
+
+main:
+  js:
+    js/main.js: {}
+  dependencies:
+    - htmx_blog/htmx
+    - htmx_blog/sortable

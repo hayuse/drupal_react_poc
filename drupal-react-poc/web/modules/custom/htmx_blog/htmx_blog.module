@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Primary module file for the HTMX Blog module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function htmx_blog_theme($existing, $type, $theme, $path) {
+  return [
+    'htmx_blog_list' => [
+  // next_page を追加.
+      'variables' => ['posts' => [], 'next_page' => NULL],
+    ],
+    // ▼▼▼ 以下を追記 ▼▼▼
+    'htmx_blog_list_items' => [
+      'variables' => ['posts' => [], 'next_page' => NULL],
+    ],
+  ];
+}

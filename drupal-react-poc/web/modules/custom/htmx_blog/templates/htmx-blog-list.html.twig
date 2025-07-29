@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Template for the HTMX Blog list.
+ *
+ * Available variables:
+ * - posts: An array of post data, each with:
+ * - title: The node title.
+ * - url: The canonical URL to the node.
+ * - htmx_url: The URL for the HTMX GET request.
+ */
+#}
+<h2>HTMX Blog List</h2>
+<div class="blog-list-wrapper">
+	<ul id="blog-list" class="blog-list-custom sortable-js">
+		{% include '@htmx_blog/htmx-blog-list-items.html.twig' with {
+      'posts': posts,
+      'next_page': next_page
+    } %}
+	</ul>
+  <form id="sort-form" hx-post="{{ url('htmx_blog.save_sort') }}" hx-trigger="submit"></form>
+  <div id="blog-list-wrapper" class="blog-details-area">
+</div>
