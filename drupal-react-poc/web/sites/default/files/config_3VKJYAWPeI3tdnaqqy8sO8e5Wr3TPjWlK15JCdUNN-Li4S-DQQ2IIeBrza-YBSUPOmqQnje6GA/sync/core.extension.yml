@@ -4,11 +4,14 @@ module:
   block: 0
   contextual: 0
   dblog: 0
+  devel: 0
+  devel_generate: 0
   dynamic_page_cache: 0
   field: 0
   field_ui: 0
   file: 0
   filter: 0
+  htmx_blog: 0
   image: 0
   jsonapi: 0
   language: 0

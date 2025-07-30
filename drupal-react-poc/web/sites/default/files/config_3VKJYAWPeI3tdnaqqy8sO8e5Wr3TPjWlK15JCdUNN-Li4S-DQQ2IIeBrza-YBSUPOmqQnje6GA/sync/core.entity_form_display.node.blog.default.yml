@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.blog.field_body
+    - field.field.node.blog.field_sort_weight
     - field.field.node.blog.field_visual
-    - image.style.thumbnail
     - node.type.blog
   module:
     - image
@@ -29,13 +29,20 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_sort_weight:
+    type: number
+    weight: 26
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
   field_visual:
     type: image_image
     weight: 1
     region: content
     settings:
       progress_indicator: throbber
-      preview_image_style: thumbnail
+      preview_image_style: ''
     third_party_settings: {  }
   langcode:
     type: language_select
