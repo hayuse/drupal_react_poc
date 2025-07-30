@@ -301,6 +301,22 @@ display:
     display_plugin: page
     position: 1
     display_options:
+      defaults:
+        header: false
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: Views
+            format: plain_text
+          tokenize: false
       display_extenders: {  }
       path: node
     cache_metadata:
