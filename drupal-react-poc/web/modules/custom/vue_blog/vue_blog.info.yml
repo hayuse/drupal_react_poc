@@ -1,0 +1,5 @@
+name: 'vue_blog'
+type: module
+description: 'rendaring blog list of vue'
+package: Custom
+core_version_requirement: ^10 || ^11

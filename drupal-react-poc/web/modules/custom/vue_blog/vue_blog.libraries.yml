@@ -1,0 +1,17 @@
+vue_blog:
+  version: 1.x
+  js:
+    js/dist/main.js: {}
+  css:
+    theme:
+      js/dist/style.css: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
+## 開発用スクリプト(HMR)
+vue_blog.local:
+  version: 1.x
+  js:
+    http://localhost:5173/@vite/client: { attributes: { type: module } }
+    http://localhost:5173/src/main.ts: { attributes: { type: module } }
