@@ -1,9 +1,9 @@
-import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Skeleton from "@mui/joy/Skeleton";
 import { Typography } from "@mui/joy";
 import { AspectRatio } from "@mui/joy";
 import Box from "@mui/joy/Box";
+import { useListContext } from "../contexts/ListProvider";
 
 interface Article {
   id: string;
@@ -29,19 +29,19 @@ interface Article {
 }
 
 const Details = () => {
-  const { id } = useParams<{ id: string }>();
   const [article, setArticle] = useState<Article | null>(null);
   const [includedData, setIncludedData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { selectedId } = useListContext();
 
   useEffect(() => {
-    if (!id) return;
+    if (!selectedId) return;
 
     setLoading(true);
-    fetch(`/jsonapi/node/blog/${id}?include=field_visual`)
+    fetch(`/jsonapi/node/blog/${selectedId}?include=field_visual`)
       .then((response) => {
         if (!response.ok) {
-          throw new Error(`Could not fetch article with ID ${id}.`);
+          throw new Error(`Could not fetch article with ID ${selectedId}.`);
         }
         return response.json();
       })
@@ -54,7 +54,7 @@ const Details = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, [id]);
+  }, [selectedId]);
 
   const getImageUrl = (imageField: any) => {
     if (!imageField || !imageField.data) {
@@ -65,14 +65,21 @@ const Details = () => {
     return file ? file.attributes.uri.url : null;
   };
 
-  return (
-    <article>
-      <Link to="/">‹ Back to list</Link>
+  if (article === null) return '';
 
+  return (
+    <article style={{ width: "50%", height: "100%", overflow: "auto" }}>
       <Typography level="h1">
-        <Skeleton variant="text" level="h1" loading={loading} width="60%">
-          {article?.attributes.title}
-        </Skeleton>
+        {loading ? (
+          <Skeleton
+            variant="text"
+            level="h1"
+            loading={loading}
+            width="60%"
+          ></Skeleton>
+        ) : (
+          article?.attributes.title
+        )}
       </Typography>
       <AspectRatio
         ratio="16/9"
