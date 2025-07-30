@@ -1,23 +1,18 @@
-import {
-  HashRouter,
-  Route,
-  Routes
-} from "react-router-dom";
 import List from './component/List';
 import Details from './component/Details';
+import { Box } from '@mui/joy';
+import { ListProvider } from './contexts/ListProvider';
 
 function App() {
 
   return (
-    <div>
-      <h1>React blog list</h1>
-      <HashRouter>
-        <Routes>
-          <Route path='/' element={<List />} />
-          <Route path='/details/:id' element={<Details />} />
-        </Routes>
-      </HashRouter>
-    </div>
+    <ListProvider>
+      <h2>React blog list</h2>
+      <Box sx={{display: 'flex', height: '50vh', overflow: 'hidden', gap: '20px',}}>
+        <List />
+        <Details />
+      </Box>
+    </ListProvider>
   );
 }
 
