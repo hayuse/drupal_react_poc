@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Renders a list of blog items and a 'load more' button.
+ */
+#}
+
+{# 渡された記事リストを描画 #}
+{% for post in posts %}
+  <li data-id="{{ post.nid }}">
+    <a href="{{ post.url }}" hx-get="{{ post.htmx_url }}" hx-target="#blog-details-area" hx-indicator="#indicator" hx-swap="outerHTML" class="blog-link handle">
+      {% if post.visual %}
+        <img src="{{ post.visual }}" alt="{{ post.title }}" loading="lazy">
+      {% endif %}
+      <span>{{ post.title }}</span>
+    </a>
+  </li>
+{% endfor %}
+
+{# 次のページがあれば、スクロールの起点となる要素を描画 #}
+{% if next_page %}
+  <li hx-get="{{ url('htmx_blog.load_more', {'page': next_page}) }}"
+      hx-trigger="intersect oncerevealed"
+      hx-swap="outerHTML"
+      class="load-more-sentinel">
+    {# ユーザーへのフィードバックとしてローディング表示などを置く #}
+    <div class="more_loading"></div>
+  </li>
+{% endif %}

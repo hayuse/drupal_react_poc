@@ -1,0 +1,25 @@
+htmx_blog.get_blog_post:
+  path: '/htmx-blog/{node}'
+  defaults:
+    _controller: '\Drupal\htmx_blog\Controller\HtmxBlogController::getPost'
+    _title: 'Blog Post'
+  requirements:
+    _permission: 'access content'
+  options:
+    _admin_route: FALSE
+
+htmx_blog.load_more:
+  path: '/htmx-blog/load-more'
+  defaults:
+    _controller: '\Drupal\htmx_blog\Controller\HtmxBlogController::loadMore'
+    _title: 'Load More Posts'
+  requirements:
+    _permission: 'access content'
+
+htmx_blog.save_sort:
+  path: '/htmx-blog/sort'
+  defaults:
+    _controller: '\Drupal\htmx_blog\Controller\HtmxBlogController::saveSortOrder'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'
