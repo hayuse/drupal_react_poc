@@ -7,19 +7,14 @@ document.addEventListener('htmx:load', function (event) {
     // Sortable.jsを初期化
     new Sortable(sortableElement, {
       animation: 150,
-      handle: '.handle', // ドラッグの起点となるハンドル（オプション）
-      // ドラッグ＆ドロップが完了したときのイベント
+      handle: '.handle',
       onEnd: function (evt) {
-        // 並び替えられたIDのリストを取得
         const sortedIds = Array.from(evt.to.children).map(
           (child) => child.dataset.id
         );
 
-        // 非表示フォームのinputにIDのリストをセット
         const form = document.getElementById('sort-form');
-        // 既存のinputをクリア
         form.innerHTML = '';
-        // 新しい順序でinputを追加
         sortedIds.forEach((id) => {
           const input = document.createElement('input');
           input.type = 'hidden';
@@ -28,7 +23,6 @@ document.addEventListener('htmx:load', function (event) {
           form.appendChild(input);
         });
 
-        // HTMXにフォームのPOSTを依頼する
         htmx.trigger('#sort-form', 'submit');
       },
     });

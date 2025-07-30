@@ -76,7 +76,14 @@ class HtmxBlogController extends ControllerBase {
     $view_builder = $this->entityTypeManager->getViewBuilder('node');
     $node_view = $view_builder->view($node, 'full');
 
-    $build = ['content' => $node_view];
+    $build = [
+      '#type' => 'container',
+      '#attributes' => [
+        'class' => 'blog-details-area',
+        'id' => 'blog-details-area',
+      ],
+      'content' => $node_view,
+    ];
 
     $rendered_html = $this->renderer->renderRoot($build);
 

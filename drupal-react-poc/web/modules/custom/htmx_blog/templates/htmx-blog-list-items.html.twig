@@ -8,7 +8,7 @@
 {# 渡された記事リストを描画 #}
 {% for post in posts %}
   <li data-id="{{ post.nid }}">
-    <a href="{{ post.url }}" hx-get="{{ post.htmx_url }}" hx-target="#blog-list-wrapper" hx-swap="innerHTML" class="blog-link handle">
+    <a href="{{ post.url }}" hx-get="{{ post.htmx_url }}" hx-target="#blog-details-area" hx-indicator="#indicator" hx-swap="outerHTML" class="blog-link handle">
       {% if post.visual %}
         <img src="{{ post.visual }}" alt="{{ post.title }}" loading="lazy">
       {% endif %}

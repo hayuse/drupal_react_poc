@@ -18,6 +18,20 @@
       'next_page': next_page
     } %}
 	</ul>
-  <form id="sort-form" hx-post="{{ url('htmx_blog.save_sort') }}" hx-trigger="submit"></form>
-  <div id="blog-list-wrapper" class="blog-details-area">
+	<form id="sort-form" hx-post="{{ url('htmx_blog.save_sort') }}" hx-trigger="submit"></form>
+	<div id="blog-details-area" class="blog-details-area">
+	</div>
+  <div id="indicator" class="overlay">
+    <div class="loading">
+      <div class="cube">
+        <div class="cube__inner"></div>
+      </div>
+      <div class="cube">
+        <div class="cube__inner"></div>
+      </div>
+      <div class="cube">
+        <div class="cube__inner"></div>
+      </div>
+    </div>
+  </div>
 </div>
