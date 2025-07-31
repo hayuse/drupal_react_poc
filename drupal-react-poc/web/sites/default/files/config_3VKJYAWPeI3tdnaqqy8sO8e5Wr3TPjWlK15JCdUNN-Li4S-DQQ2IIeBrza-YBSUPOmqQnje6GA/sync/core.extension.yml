@@ -29,6 +29,7 @@ module:
   text: 0
   user: 0
   views_ui: 0
+  vue_blog: 0
   views: 10
   minimal: 1000
 theme:

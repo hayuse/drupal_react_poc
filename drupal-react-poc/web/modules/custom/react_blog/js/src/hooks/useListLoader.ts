@@ -32,7 +32,6 @@ export const useListLoader = () => {
         }
       }
 
-      console.log(data.length);
       if (data.length < PAGE_LIMIT) {
         setHasMore(false);
       }
